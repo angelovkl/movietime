@@ -1,23 +1,38 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+
+
 import './App.css';
 
+import Header from './components/header/header';
+
+import Movies from './pages/movies/movies';
+
 function App() {
+  const [open, setOpen] = React.useState(false)
+
+  const handleDrawerOpen = (value) =>{
+    setOpen(value);
+    console.log(value, ' open drawer')
+  }
+
+  const handleDrawerClose = (value) =>{
+    setOpen(value);
+    console.log(value, ' close drawer')
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header handleDrawerOpen={handleDrawerOpen} open={open}></Header>
+      <BrowserRouter>
+        <Switch>
+          <Route
+            exact
+            path="/"
+            component={() => <Movies handleDrawerClose={handleDrawerClose} open={open}/>}
+          />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
