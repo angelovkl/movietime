@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/angelovkl/movietime/static/css/main.9d5b29c0.chunk.css",
+    "main.js": "/angelovkl/movietime/static/js/main.4fdbf167.chunk.js",
+    "main.js.map": "/angelovkl/movietime/static/js/main.4fdbf167.chunk.js.map",
+    "runtime-main.js": "/angelovkl/movietime/static/js/runtime-main.484d60d7.js",
+    "runtime-main.js.map": "/angelovkl/movietime/static/js/runtime-main.484d60d7.js.map",
+    "static/js/2.b1cfa82b.chunk.js": "/angelovkl/movietime/static/js/2.b1cfa82b.chunk.js",
+    "static/js/2.b1cfa82b.chunk.js.map": "/angelovkl/movietime/static/js/2.b1cfa82b.chunk.js.map",
+    "static/js/3.e8a81f54.chunk.js": "/angelovkl/movietime/static/js/3.e8a81f54.chunk.js",
+    "static/js/3.e8a81f54.chunk.js.map": "/angelovkl/movietime/static/js/3.e8a81f54.chunk.js.map",
+    "index.html": "/angelovkl/movietime/index.html",
+    "static/css/main.9d5b29c0.chunk.css.map": "/angelovkl/movietime/static/css/main.9d5b29c0.chunk.css.map",
+    "static/js/2.b1cfa82b.chunk.js.LICENSE.txt": "/angelovkl/movietime/static/js/2.b1cfa82b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.484d60d7.js",
+    "static/js/2.b1cfa82b.chunk.js",
+    "static/css/main.9d5b29c0.chunk.css",
+    "static/js/main.4fdbf167.chunk.js"
+  ]
+}
