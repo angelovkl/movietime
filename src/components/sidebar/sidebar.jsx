@@ -16,14 +16,16 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 
 import { useStyles } from './sidebar.styles';
+import { TestContext } from '../../App';
 
 const Sidebar = (props) => {
-    
+    const context = React.useContext(TestContext);
+
     const classes = useStyles();
     const theme = useTheme();
 
     const handleDrawerClose = () => {
-        props.handleDrawerClose(false)
+        context.handleDrawerClose(false)
     };
 
     return ( 
@@ -31,13 +33,13 @@ const Sidebar = (props) => {
         <Drawer
             variant="permanent"
             className={clsx(classes.drawer, {
-            [classes.drawerOpen]: props.open,
-            [classes.drawerClose]: !props.open,
+            [classes.drawerOpen]: context.open,
+            [classes.drawerClose]: !context.open,
             })}
             classes={{
             paper: clsx({
-                [classes.drawerOpen]: props.open,
-                [classes.drawerClose]: !props.open,
+                [classes.drawerOpen]: context.open,
+                [classes.drawerClose]: !context.open,
             }),
             }}
         >

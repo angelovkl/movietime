@@ -8,30 +8,33 @@ import Header from './components/header/header';
 
 import Movies from './pages/movies/movies';
 
+export const TestContext = React.createContext();
+
 function App() {
   const [open, setOpen] = React.useState(false)
 
   const handleDrawerOpen = (value) =>{
     setOpen(value);
-    console.log(value, ' open drawer')
   }
 
   const handleDrawerClose = (value) =>{
     setOpen(value);
-    console.log(value, ' close drawer')
   }
 
   return (
     <div className="App">
       <Header handleDrawerOpen={handleDrawerOpen} open={open}></Header>
       <BrowserRouter>
+      <TestContext.Provider value={{ handleDrawerClose,open }}>
+
         <Switch>
           <Route
             exact
             path="/"
-            component={() => <Movies handleDrawerClose={handleDrawerClose} open={open}/>}
+            component={() => <Movies />}
           />
         </Switch>
+        </TestContext.Provider>
       </BrowserRouter>
     </div>
   );
