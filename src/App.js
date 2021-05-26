@@ -1,40 +1,23 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
+import Header from './components/header/header';
+import Movies from './pages/movies/movies';
 
 import './App.css';
 
-import Header from './components/header/header';
-
-import Movies from './pages/movies/movies';
-
-export const TestContext = React.createContext();
-
 function App() {
-  const [open, setOpen] = React.useState(false)
-
-  const handleDrawerOpen = (value) =>{
-    setOpen(value);
-  }
-
-  const handleDrawerClose = (value) =>{
-    setOpen(value);
-  }
-
   return (
     <div className="App">
-      <Header handleDrawerOpen={handleDrawerOpen} open={open}></Header>
+      <Header></Header>
       <BrowserRouter>
-      <TestContext.Provider value={{ handleDrawerClose,open }}>
-
         <Switch>
           <Route
             exact
-            path="/"
+            path="/movietime"
             component={() => <Movies />}
           />
         </Switch>
-        </TestContext.Provider>
       </BrowserRouter>
     </div>
   );

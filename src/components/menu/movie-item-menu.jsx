@@ -1,63 +1,30 @@
 import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
+
+import { ListItemIcon, ListItemText, IconButton} from '@material-ui/core';
+
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import DraftsIcon from '@material-ui/icons/Drafts';
 import SendIcon from '@material-ui/icons/Send';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
-import IconButton from '@material-ui/core/IconButton';
-
-const StyledMenu = withStyles({
-    paper: {
-      border: '1px solid #d3d4d5',
-    },
-  })((props) => (
-    <Menu
-      elevation={0}
-      getContentAnchorEl={null}
-      anchorOrigin={{
-        vertical: 'bottom',
-        horizontal: 'center',
-      }}
-      transformOrigin={{
-        vertical: 'top',
-        horizontal: 'center',
-      }}
-      {...props}
-    />
-  ));
-  
-  const StyledMenuItem = withStyles((theme) => ({
-    root: {
-      '&:focus': {
-        backgroundColor: theme.palette.primary.main,
-        '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
-          color: theme.palette.common.white,
-        },
-      },
-    },
-  }))(MenuItem);
+import { StyledMenu, StyledMenuItem } from './movie-item-menu.styles';
 
 const MovieItemMenu = () => {
-    const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
+  const handleClick = (event) => {
+      setAnchorEl(event.currentTarget);
+  };
 
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
-    return ( 
-        <div>
-        <IconButton style={{backdropFilter: "blur(11px)"}} onClick={handleClick} aria-label="settings">
-            <MoreVertIcon />
-        </IconButton>
+  const handleClose = () => {
+      setAnchorEl(null);
+  };
+  
+  return ( 
+    <div style={{opacity:"0.8", padding: "10px"}}>
+      <IconButton style={{backdropFilter: "blur(11px)", background: "white"}} onClick={handleClick} aria-label="settings">
+        <MoreVertIcon />
+      </IconButton>
       
       <StyledMenu
         id="customized-menu"
@@ -86,7 +53,7 @@ const MovieItemMenu = () => {
         </StyledMenuItem>
       </StyledMenu>
     </div>
-     );
+  );
 }
  
 export default MovieItemMenu;
